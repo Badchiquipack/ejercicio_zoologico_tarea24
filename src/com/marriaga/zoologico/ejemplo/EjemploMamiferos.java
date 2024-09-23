@@ -26,6 +26,36 @@ public class EjemploMamiferos {
 
         for (Mamifero mamifero : mamiferos) {
             System.out.println(mamifero.getClass().getSimpleName());
+            System.out.println("Habitat: " + mamifero.getHabitat());
+            System.out.println("Altura (m): " + mamifero.getAltura());
+            System.out.println("Largo (m): " + mamifero.getLargo());
+            System.out.println("Peso (kg): " + mamifero.getPeso());
+            System.out.println("Nombre Científico: " + mamifero.getNombreCientifico());
+
+            if (mamifero instanceof Felino) {
+                System.out.println("Tamaño de Garras (cm): " + ((Felino) mamifero).getTamanoGarras());
+                System.out.println("Velocidad (km/h): " + ((Felino) mamifero).getVelocidad());
+                if (mamifero instanceof Leon) {
+                    System.out.println("Tamaño de manada: " + ((Leon) mamifero).getNumeroManada());
+                    System.out.println("Potencia de rugido en decibeles: " + ((Leon) mamifero).getPotenciaRugido());
+                }
+                if (mamifero instanceof Tigre) {
+                    System.out.println("Especie: " + ((Tigre) mamifero).getEspecie());
+                }
+            }
+
+            if (mamifero instanceof Canino) {
+                System.out.println("Tamaño de colmillos (cm): " + ((Canino) mamifero).getTamanoColmillos());
+                System.out.println("Color: " + ((Canino) mamifero).getColor());
+                if (mamifero instanceof Lobo) {
+                    System.out.println("Especie: " + ((Lobo) mamifero).getEspecieLobo());
+                    System.out.println("Tamaño de jauría: " + ((Lobo) mamifero).getNumeroCamada());
+                }
+                if (mamifero instanceof Perro) {
+                    System.out.println("Fuerza de mordida (psi): " + ((Perro) mamifero).getFuerzaMordida());
+                }
+            }
+
             System.out.println(mamifero.comer());
             System.out.println(mamifero.dormir());
             System.out.println(mamifero.correr());
